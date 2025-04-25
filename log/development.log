@@ -7302,3 +7302,293 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:16:18 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (6.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 65ms (Views: 54.7ms | ActiveRecord: 6.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:16:25 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:16:26 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/10" for 127.0.0.1 at 2025-04-25 17:16:31 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 10 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:16:34 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/10" for 127.0.0.1 at 2025-04-25 17:16:35 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 10 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:16:39 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/10" for 127.0.0.1 at 2025-04-25 17:16:44 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 10 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/products/10" for 127.0.0.1 at 2025-04-25 17:16:48 +0100
+Started PATCH "/products/10" for 127.0.0.1 at 2025-04-25 17:16:49 +0100
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>{"name"=>"Galaxy Watch6", "description"=>"Bluetooth (43mm) Black\nGain valuable insights into your progress and achievements with Galaxy Watch6 Classic. \nTrack over 90 different workouts, or you can even create your own custom workout, to log your daily activity and monitor your progress. ", "price"=>500, "available"=>true}, "id"=>"10"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 10 LIMIT 1 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+  [1m[36mProduct Update (3.6ms)[0m  [1m[33mUPDATE "products" SET "price" = 500.0, "updated_at" = '2025-04-25 16:16:49.208006' WHERE "products"."id" = 10 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 7.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:16:49 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:17:01 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/11" for 127.0.0.1 at 2025-04-25 17:18:43 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 11 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/products/11" for 127.0.0.1 at 2025-04-25 17:18:46 +0100
+Started PATCH "/products/11" for 127.0.0.1 at 2025-04-25 17:18:46 +0100
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>{"name"=>"iPhone 16 Pro", "description"=>"Titanium design with larger 6.3‑inch Super Retina XDR display, footnote 1 durable, latest-generation Ceramic Shield, Action button, and USB-C with USB 3 speeds footnote 2.\nA18 Pro chip powers AAA gaming, advanced photo and video features — and helps deliver a huge leap in battery life", "price"=>1239.01, "available"=>false}, "id"=>"11"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 11 LIMIT 1 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:18:46 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/12" for 127.0.0.1 at 2025-04-25 17:18:48 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 12 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/products/12" for 127.0.0.1 at 2025-04-25 17:18:51 +0100
+Started PATCH "/products/12" for 127.0.0.1 at 2025-04-25 17:18:51 +0100
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>{"name"=>"MacBook Air 13-inch", "description"=>"Lightweight and less than two centimeters thin, so you can take MacBook Air anywhere you go.\nThe powerful 10-core CPU and up to 10-core GPU of the Apple M4 chip keep things running smoothly.\nUp to 18 hours of battery life, so you can leave your charger at home footnote.\nThe 13.6-inch Liquid Retina display supports 1 billion colours footnote .", "price"=>1249.28, "available"=>false}, "id"=>"12"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 12 LIMIT 1 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+  [1m[36mProduct Update (3.0ms)[0m  [1m[33mUPDATE "products" SET "available" = 0, "updated_at" = '2025-04-25 16:18:51.611726' WHERE "products"."id" = 12 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 3.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:18:51 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:19:08 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:19:09 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started OPTIONS "/products/17" for 127.0.0.1 at 2025-04-25 17:19:26 +0100
+Started DELETE "/products/17" for 127.0.0.1 at 2025-04-25 17:19:27 +0100
+Processing by ProductsController#destroy as */*
+  Parameters: {"id"=>"17"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 17 LIMIT 1 /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:31:in `destroy'
+  [1m[36mProduct Destroy (2.4ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 17 /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:31:in `destroy'
+Completed 204 No Content in 11ms (ActiveRecord: 2.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:19:27 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:19:29 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:19:33 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:19:33 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:29:49 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:29:50 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:29:53 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:29:54 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:29:56 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:29:56 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:30:39 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:31:03 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:32:05 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:32:12 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 17:32:13 +0100
+Processing by ProductsController#index as */*
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 1.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 20:51:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (3.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-25 20:51:13 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
