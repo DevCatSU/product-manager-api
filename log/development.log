@@ -1,0 +1,255 @@
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='ProductManagerApi'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-24 12:27:57.757044', '2025-04-24 12:27:57.757050') RETURNING "key" /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Migrating to CreateProducts (20250424121708)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "price" decimal, "available" boolean DEFAULT 1, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250424121708') RETURNING "version" /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 13:32:37 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 213ms (Views: 2.4ms | ActiveRecord: 4.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "available", "created_at", "updated_at") VALUES ('Galaxy S24', 'Latest Samsung phone', 1299.99, 1, '2025-04-24 12:54:13.314299', '2025-04-24 12:54:13.314299') RETURNING "id" /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 13:58:10 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 3.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-04-24 14:02:43 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 74ms (Views: 9.0ms | ActiveRecord: 4.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "available", "created_at", "updated_at") VALUES ('MacBook Air M3', 'Apple''s ultra-thin laptop with M3 chip', 1599.0, 1, '2025-04-24 13:05:25.525591', '2025-04-24 13:05:25.525591') RETURNING "id" /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Update (0.7ms)[0m  [1m[33mUPDATE "products" SET "name" = 'iPhone 15', "updated_at" = '2025-04-24 13:07:39.523390' WHERE "products"."id" = 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 14:08:12 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 14:08:49 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-04-24 14:08:51 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 14:09:26 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-04-24 14:09:27 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 2 /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 14:10:22 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2025-04-24 14:13:40 +0100
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"name"=>"MacBook Pro", "description"=>"High-performance laptop", "price"=>1999.99, "available"=>true}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:15:in `create'
+  [1m[36mProduct Create (2.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "available", "created_at", "updated_at") VALUES ('MacBook Pro', 'High-performance laptop', 1999.99, 1, '2025-04-24 13:13:40.914064', '2025-04-24 13:13:40.914064') RETURNING "id" /*action='create',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:15:in `create'
+Completed 201 Created in 9ms (Views: 0.5ms | ActiveRecord: 2.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-04-24 14:14:48 +0100
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{"name"=>"MacBook Pro", "description"=>"High-performance laptop", "price"=>1999.99, "available"=>true}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for ::1 at 2025-04-24 14:15:16 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"product"=>{"name"=>"MacBook Pro", "description"=>"High-performance laptop", "price"=>1999.99, "available"=>true}, "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 404 Not Found in 192ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  
+app/controllers/products_controller.rb:38:in `set_product'
+Started GET "/products" for ::1 at 2025-04-24 14:15:32 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/" for ::1 at 2025-04-24 14:15:38 +0100
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{"name"=>"MacBook Pro", "description"=>"High-performance laptop", "price"=>1999.99, "available"=>true}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/3" for ::1 at 2025-04-24 14:15:41 +0100
+Processing by ProductsController#show as */*
+  Parameters: {"product"=>{"name"=>"MacBook Pro", "description"=>"High-performance laptop", "price"=>1999.99, "available"=>true}, "id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 3 LIMIT 1 /*action='show',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/products/3" for ::1 at 2025-04-24 14:16:21 +0100
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>{"price"=>1799.99}, "id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 3 LIMIT 1 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+  [1m[36mProduct Update (2.3ms)[0m  [1m[33mUPDATE "products" SET "price" = 1799.99, "updated_at" = '2025-04-24 13:16:21.614965' WHERE "products"."id" = 3 /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:23:in `update'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 2.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/products/3" for ::1 at 2025-04-24 14:17:04 +0100
+Processing by ProductsController#destroy as */*
+  Parameters: {"product"=>{"price"=>1799.99}, "id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 3 LIMIT 1 /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:38:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:31:in `destroy'
+  [1m[36mProduct Destroy (2.6ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 3 /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:31:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:31:in `destroy'
+Completed 204 No Content in 10ms (ActiveRecord: 3.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 14:29:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 82ms (Views: 3.1ms | ActiveRecord: 3.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/products/" for ::1 at 2025-04-24 14:29:42 +0100
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"name"=>"MacBook Pro", "description"=>"High-performance laptop", "price"=>1999.99, "available"=>true}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:15:in `create'
+  [1m[36mProduct Create (2.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "available", "created_at", "updated_at") VALUES ('MacBook Pro', 'High-performance laptop', 1999.99, 1, '2025-04-24 13:29:42.555177', '2025-04-24 13:29:42.555177') RETURNING "id" /*action='create',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:15:in `create'
+Completed 201 Created in 25ms (Views: 0.8ms | ActiveRecord: 6.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2025-04-24 14:29:45 +0100
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-04-24 13:32:03.918252', '2025-04-24 13:32:03.918256') RETURNING "key" /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Migrating to CreateProducts (20250424121708)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "price" decimal, "available" boolean DEFAULT 1, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250424121708') RETURNING "version" /*application='ProductManagerApi'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='ProductManagerApi'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Started GET "/products" for ::1 at 2025-04-24 15:06:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 64ms (Views: 9.8ms | ActiveRecord: 4.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-04-24 15:46:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 69ms (Views: 9.3ms | ActiveRecord: 4.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-04-24 15:46:10 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/products" for 127.0.0.1 at 2025-04-24 16:33:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='ProductManagerApi'*/[0m
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (2.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='ProductManagerApi',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:6:in `index'
+Completed 200 OK in 97ms (Views: 10.0ms | ActiveRecord: 4.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
