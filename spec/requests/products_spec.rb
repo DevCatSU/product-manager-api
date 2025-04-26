@@ -16,7 +16,7 @@ RSpec.describe "Products API", type: :request do
     # 3. Update
     patch "/products/#{product["id"]}", params: { product: { price: 20.0 } }
     expect(response).to have_http_status(:ok)
-    expect(JSON.parse(response.body)["price"].to_f).to eq(20.0) # 👈 수정
+    expect(JSON.parse(response.body)["price"].to_f).to eq(20.0)
        
     # 4. Delete
     delete "/products/#{product["id"]}"
